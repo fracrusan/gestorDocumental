@@ -58,7 +58,7 @@ public class PlantillaWord {
          para1Run.setColor("0000FF");
          para1Run.setFontSize(20);
          para1Run.setText(texto);
-         para1Run.setBold(true);
+         para1Run.setBold(false);
     }    
     /**
      * Método para añadir un subtítulo con un formato determinado

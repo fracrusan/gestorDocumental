@@ -50,6 +50,21 @@ class TestPlantillaWord {
 	        assertEquals(wordDocument.convertTextFileToString("parrafo.txt"), paragraphs.get(2).getText());
 	       
 	    }
+	    
+	    /**
+	     * Verifica los párrafos no están en negrita
+	     * @throws Exception
+	     */
+	    @Test
+	    public void notBoldParragraph_thenCorrect() throws Exception {
+	        Path msWordPath = Paths.get("Quijote.docx");
+	        logger.info("path ",msWordPath);
+	        XWPFDocument document = new XWPFDocument(Files.newInputStream(msWordPath));
+	        List<XWPFParagraph> paragraphs = document.getParagraphs();
+	        document.close();
+	        assertFalse(paragraphs.get(2).getRuns().get(0).isBold());	        
+	        
+	    }
 	}
 
 
